@@ -25,7 +25,7 @@ body:
     id: terms
     attributes:
       label: Termíny
-      description: Jeden řádek na jazyk, např. „la: gaster“, „cs: žaludek“.
+      description: "Jeden řádek na jazyk, např. „la: gaster“, „cs: žaludek“."
     validations:
       required: true
   - type: textarea

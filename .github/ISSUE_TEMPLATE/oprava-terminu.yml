@@ -1,0 +1,58 @@
+name: Oprava termínu
+description: Navrhněte opravu českého, latinského nebo jiného termínu (Suggest a term correction)
+title: "[Oprava] "
+labels: ["oprava-terminu"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Díky za opravu. Uveďte prosím zdroj. Bez něj návrh nemůžeme převzít.
+  - type: input
+    id: concept
+    attributes:
+      label: Pojem
+      description: ID (např. FMA7148) nebo současný název pojmu.
+      placeholder: FMA7148 / žaludek
+    validations:
+      required: true
+  - type: dropdown
+    id: language
+    attributes:
+      label: Jazyk
+      options:
+        - čeština (cs)
+        - latina (la)
+        - angličtina (en)
+        - jiný jazyk (uveďte v poznámce)
+    validations:
+      required: true
+  - type: input
+    id: current
+    attributes:
+      label: Současný termín
+  - type: input
+    id: proposed
+    attributes:
+      label: Navržený termín
+      description: Případně i synonyma oddělená čárkou.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Zdroj
+      description: Kde je termín doložen, např. TA98 (kód), učebnice (autor, rok, strana), MeSH-CZ.
+    validations:
+      required: true
+  - type: textarea
+    id: note
+    attributes:
+      label: Poznámka
+      description: Proč je současný termín chybný, kontext, úroveň (SŠ / LF)…
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Licence
+      options:
+        - label: Souhlasím se zveřejněním příspěvku pod licencí CC BY 4.0.
+          required: true

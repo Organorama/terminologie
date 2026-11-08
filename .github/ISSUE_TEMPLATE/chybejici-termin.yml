@@ -1,0 +1,44 @@
+name: Chybějící termín nebo synonymum
+description: Doplňte pojem, synonymum nebo nový jazyk (Suggest a missing term, synonym or language)
+title: "[Doplnit] "
+labels: ["chybejici-termin"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Co chybí
+      options:
+        - termín k existujícímu pojmu
+        - synonymum
+        - celý nový pojem
+        - nový jazyk
+    validations:
+      required: true
+  - type: input
+    id: concept
+    attributes:
+      label: Pojem
+      description: ID (FMA…), pokud ho znáte, nebo název v jakémkoli jazyce.
+    validations:
+      required: true
+  - type: textarea
+    id: terms
+    attributes:
+      label: Termíny
+      description: Jeden řádek na jazyk, např. „la: gaster“, „cs: žaludek“.
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Zdroj
+      description: TA98 (kód), učebnice (autor, rok, strana), MeSH-CZ…
+    validations:
+      required: true
+  - type: checkboxes
+    id: license
+    attributes:
+      label: Licence
+      options:
+        - label: Souhlasím se zveřejněním příspěvku pod licencí CC BY 4.0.
+          required: true

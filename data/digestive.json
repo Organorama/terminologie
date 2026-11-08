@@ -1,0 +1,55 @@
+{
+  "system": "digestive",
+  "concepts": [
+    {
+      "id": "FMA7131",
+      "ids": { "fma": "7131", "ta98": "A05.4.01.001", "ta2": "2887", "wikidata": "Q173710" },
+      "levels": ["secondary", "medical"],
+      "terms": {
+        "la": { "term": "oesophagus", "gender": "m", "status": "draft", "sources": ["ta98"] },
+        "cs": { "term": "jícen", "gender": "m", "status": "draft", "sources": ["wikidata"] },
+        "en": { "term": "esophagus", "synonyms": ["oesophagus"], "status": "draft", "sources": ["fma", "ta98"] }
+      }
+    },
+    {
+      "id": "FMA7148",
+      "ids": { "fma": "7148", "ta98": "A05.5.01.001", "ta2": "2901", "wikidata": "Q1029907" },
+      "levels": ["secondary", "medical"],
+      "terms": {
+        "la": { "term": "gaster", "synonyms": ["ventriculus"], "gender": "f", "status": "draft", "sources": ["ta98"] },
+        "cs": { "term": "žaludek", "gender": "m", "status": "draft", "sources": ["wikidata"] },
+        "en": { "term": "stomach", "status": "draft", "sources": ["ta98", "fma"] }
+      }
+    },
+    {
+      "id": "FMA7197",
+      "ids": { "fma": "7197", "ta98": "A05.8.01.001", "wikidata": "Q9368" },
+      "levels": ["secondary", "medical"],
+      "terms": {
+        "la": { "term": "hepar", "gender": "n", "status": "draft", "sources": ["ta98"] },
+        "cs": { "term": "játra", "gender": "n", "plural": true, "status": "draft", "sources": ["contributor"], "note": "Běžný český název; čeká na ověření recenzentem." },
+        "en": { "term": "liver", "status": "draft", "sources": ["ta98", "fma"] }
+      }
+    },
+    {
+      "id": "FMA7198",
+      "ids": { "fma": "7198", "ta98": "A05.9.01.001", "ta2": "3114", "wikidata": "Q9618" },
+      "levels": ["secondary", "medical"],
+      "terms": {
+        "la": { "term": "pancreas", "gender": "n", "status": "draft", "sources": ["ta98"] },
+        "cs": { "term": "slinivka břišní", "synonyms": ["pankreas"], "gender": "f", "status": "draft", "sources": ["wikidata"] },
+        "en": { "term": "pancreas", "status": "draft", "sources": ["ta98", "fma"] }
+      }
+    },
+    {
+      "id": "FMA7202",
+      "ids": { "fma": "7202", "ta98": "A05.8.02.001", "ta2": "3081", "wikidata": "Q64386" },
+      "levels": ["secondary", "medical"],
+      "terms": {
+        "la": { "term": "vesica biliaris", "synonyms": ["vesica fellea"], "gender": "f", "status": "draft", "sources": ["ta98"] },
+        "cs": { "term": "žlučník", "synonyms": ["žlučový měchýř"], "gender": "m", "status": "draft", "sources": ["wikidata"] },
+        "en": { "term": "gallbladder", "status": "draft", "sources": ["ta98", "fma"] }
+      }
+    }
+  ]
+}

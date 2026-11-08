@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Organorama/terminologie/schema/concept.schema.json",
+  "title": "Organorama terminology data file",
+  "description": "One file per body system; each concept links anatomical terms in several languages to FMA, TA98, TA2 and Wikidata identifiers.",
+  "type": "object",
+  "required": ["system", "concepts"],
+  "additionalProperties": false,
+  "properties": {
+    "system": { "type": "string", "pattern": "^[a-z][a-z-]*$", "description": "Must match the file name without .json." },
+    "concepts": { "type": "array", "items": { "$ref": "#/$defs/concept" } }
+  },
+  "$defs": {
+    "concept": {
+      "type": "object",
+      "required": ["id", "ids", "terms"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^FMA[0-9]+$", "description": "FMA identifier; equals \"FMA\" + ids.fma." },
+        "ids": {
+          "type": "object",
+          "required": ["fma"],
+          "additionalProperties": false,
+          "properties": {
+            "fma": { "type": "string", "pattern": "^[0-9]+$" },
+            "ta98": { "type": "string", "pattern": "^A[0-9]{2}\\.[0-9]\\.[0-9]{2}\\.[0-9]{3}$" },
+            "ta2": { "type": "string", "pattern": "^[0-9]+$" },
+            "wikidata": { "type": "string", "pattern": "^Q[0-9]+$" },
+            "uberon": { "type": "string", "pattern": "^UBERON:[0-9]{7}$" }
+          }
+        },
+        "levels": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "enum": ["secondary", "medical"] },
+          "description": "Intended audience: secondary school and/or medical school."
+        },
+        "terms": {
+          "type": "object",
+          "required": ["en"],
+          "propertyNames": { "pattern": "^[a-z]{2}$" },
+          "additionalProperties": { "$ref": "#/$defs/term" }
+        },
+        "note": { "type": "string" }
+      }
+    },
+    "term": {
+      "type": "object",
+      "required": ["term", "status", "sources"],
+      "additionalProperties": false,
+      "properties": {
+        "term": { "type": "string", "minLength": 1 },
+        "synonyms": { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1 } },
+        "gender": { "enum": ["m", "f", "n"], "description": "Grammatical gender, used to compose left/right forms." },
+        "plural": { "type": "boolean", "description": "True for plural-only nouns (e.g. Czech \"játra\")." },
+        "status": { "enum": ["draft", "needs-review", "verified"] },
+        "sources": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "enum": ["ta98", "ta2", "fma", "wikidata", "mesh-cz", "textbook", "contributor"] } },
+        "reviewedBy": { "type": "array", "uniqueItems": true, "items": { "type": "string", "pattern": "^[A-Za-z0-9-]+$" } },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}
